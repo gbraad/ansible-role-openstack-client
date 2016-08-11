@@ -1,0 +1,9 @@
+---
+- name: Add 'Mitaka' release package (CentOS)
+  package: name="centos-release-openstack-mitaka" state=present
+  when: >
+        ansible_distribution == 'CentOS'
+
+- name: Install OpenStack client
+  package: name=python-openstackclient state=installed
+
